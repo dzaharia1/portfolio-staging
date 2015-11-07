@@ -5,8 +5,7 @@ var attachHeader = function () {
 	var scrollPosition = (document.documentElement.scrollTop || window.scrollY);
 	var flourishPosition = (scrollPosition / document.querySelector('html').offsetHeight) * (codeElement.offsetHeight);
 	topFlourish.scrollTop = flourishPosition;
-
-	console.log(scrollPosition - headerTop);
+	
 	if (scrollPosition >= (headerTop - 1)) {
 		header.classList.add('header-fixed');
 		topFlourish.classList.add('in-menu');
