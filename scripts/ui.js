@@ -1,5 +1,4 @@
-var topFlourish, codeElement, header, headerTop, flourishHeght, pageName,
-navItems, navTargets, headerHeight;
+var topFlourish, codeElement, header, headerTop, flourishHeght, navItems, headerHeight;
 
 var attachHeader = function () {
 	var scrollPosition = (document.documentElement.scrollTop || window.scrollY) + 11.188;
@@ -36,10 +35,7 @@ var scrollIntoView = function (to, duration) {
     animateScroll();
 }
 
-//t = current time
-//b = start value
-//c = change in value
-//d = duration
+//t = current time | b = start value | c = change in value | d = duration
 Math.easeInOutQuad = function  (t, b, c, d) {
 	t /= d/2;
 	if (t < 1) return c/2*t*t + b;
@@ -63,21 +59,12 @@ var setActiveNavItem = function () {
 			thisNavLink.parentNode.classList.remove('header__nav-item--active');
 		}
 	});
-
-	// for (var i = 0; i < navTargets.length; i ++) {
-	// 	var target = document.querySelector('.' + navTargets[i]);
-	// 	var navItem = document.querySelector('[target=' + navTargets[i] + ']').parentNode;
-	// 	if (screenMiddle > target.offsetTop && screenMiddle < (target.offsetTop + target.offsetHeight)) {
-	// 		navItem.classList.add('header__nav-item--active');
-	// 	}
-	// }
 };
 
 var readyFunction = function () {
 	topFlourish = document.querySelector('.top-flourish');
 	codeElement = document.querySelector('code');
 	header = document.querySelector('header');
-	pageName = document.querySelector('.header__name');
 	navItems = document.querySelectorAll('.header__nav-item a');
 	headerTop = header.offsetTop;
 	flourishHeght = topFlourish.offsetHeight;
